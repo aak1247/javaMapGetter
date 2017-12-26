@@ -18,10 +18,11 @@ public class Test {
             try {
                 Map map = (Map)yaml.load(new FileInputStream(url.getFile()));
                 Test test = new Test();
-                System.out.println( "result: " + test.getStringFromYaml(map, "export.tables.docx.1vs1.index"));
-                Object temp = test.getObjFromMap(map,"export.tables.docx.1vs1.image_a");
-                System.out.println( "result: " + temp.toString());
-
+                System.out.println( "name: " + test.getStringFromYaml(map, "html.body.div.form.input.name"));
+                Object temp = test.getObjFromMap(map,"html.body.div.form.input.data-list");
+                System.out.println( "data-list: " + temp.toString());
+                System.out.println("the first one: " + test.getStringFromYaml(map, "html.body.div.form.input.data-list[0]"));
+                System.out.println("the second one: " + test.getStringFromYaml(map, "html.body.div.form.input.data-list[1]"));
             }catch (Exception e){
                 e.printStackTrace();
             }
