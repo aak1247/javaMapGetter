@@ -17,18 +17,18 @@ public class Test {
             try {
                 Map map = (Map)yaml.load(new FileInputStream(url.getFile()));
                 Test test = new Test();
-                System.out.println( "name: " + test.getStringFromYaml(map, "html.body.div.form.input.name"));
+                System.out.println( "name: " + test.getStringFromMap(map, "html.body.div.form.input.name"));
                 Object temp = test.getObjFromMap(map,"html.body.div.form.input.data-list");
                 System.out.println( "data-list: " + temp.toString());
-                System.out.println("the first one: " + test.getStringFromYaml(map, "html.body.div.form.input.data-list[0]"));
-                System.out.println("the second one: " + test.getStringFromYaml(map, "html.body.div.form.input.data-list[1]"));
+                System.out.println("the first one: " + test.getStringFromMap(map, "html.body.div.form.input.data-list[0]"));
+                System.out.println("the second one: " + test.getStringFromMap(map, "html.body.div.form.input.data-list[1]"));
             }catch (Exception e){
                 e.printStackTrace();
             }
         }
     }
 
-    public String getStringFromYaml(Map map, String name) {
+    public String getStringFromMap(Map map, String name) {
         String listPattern = ".*\\[\\d*]";
         String[] nameList = name.split("\\.");
         int count = 0;
