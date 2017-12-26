@@ -1,0 +1,16 @@
+export:
+  tabls:
+    docx:
+      1vs1:
+        index: index
+        similarity: similarity
+        annotation: annotation
+        camera_name: camera_name
+        image_a:
+          - image_a_name
+          - image_a_person_id
+          - image_a_face_image_id
+        image_b:
+          - image_b_name
+          - image_b_person_id
+
